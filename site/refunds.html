@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cancellation &amp; Refund Policy — Momento</title>
+  <meta name="description" content="Momento's cancellation and refund policy for card packs and momentos." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="store.css" />
+</head>
+<body class="store-body">
+  <header class="nav scrolled" id="nav">
+    <a class="brand" href="index.html"><span class="mark">Momento</span><span class="sub">Immortal Moments</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="shop.html">Shop</a>
+      <a href="shop.html?type=pack">Packs</a>
+      <a href="shop.html?type=momento">Momentos</a>
+      <a href="index.html#story">Story</a>
+      <a href="cart.html" class="cart-btn">Cart <span class="cart-badge" data-cart-count>0</span></a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <main class="store-main">
+    <div class="wrap prose-wrap">
+      <div class="page-head">
+        <p class="eyebrow">Policies</p>
+        <h1>Cancellation &amp; Refund</h1>
+        <p class="updated">Last updated: 12 July 2026</p>
+      </div>
+
+      <div class="prose">
+        <p>We want you to love your Momento. Because our products are collectible and made-to-order, please read this policy carefully before you buy.</p>
+
+        <h2>Cancellations</h2>
+        <ul>
+          <li>You may cancel an order <strong>at any time before it has been collected by the courier service</strong>. Contact us as soon as possible with your order reference and we will cancel it and refund you in full.</li>
+          <li><strong>Once the parcel has been handed over to / collected by the courier, the order can no longer be cancelled.</strong></li>
+        </ul>
+
+        <h2>Refunds</h2>
+        <p>Refunds are issued only in <strong>exceptional circumstances</strong>, namely:</p>
+        <ul>
+          <li>the item arrived with a <strong>printing defect</strong> (for example, a misprinted or incorrectly printed momento); or</li>
+          <li>you received the <strong>wrong order or wrong item</strong>.</li>
+        </ul>
+
+        <div class="callout">
+          <p style="margin:0"><strong>Card packs are non-refundable.</strong> Because the cards in every pack are completely random — there is no fixed or guaranteed selection — all card pack sales are <strong>final</strong> and cannot be refunded or exchanged based on which cards you receive.</p>
+        </div>
+
+        <h3>Not eligible for a refund</h3>
+        <ul>
+          <li><strong>Damage caused during courier transit</strong> is not eligible for a refund.</li>
+          <li>Change of mind, or dissatisfaction with the specific cards pulled from a pack.</li>
+          <li>Minor variations in colour or finish between what appears on screen and the printed product — momentos are custom-designed prints and slight variation is normal.</li>
+        </ul>
+
+        <h3>How to claim a refund</h3>
+        <p>For an eligible printing defect or wrong-order claim, please <a href="contact.html">contact us</a> within <strong>48 hours of delivery</strong> with:</p>
+        <ul>
+          <li>your order reference, and</li>
+          <li>clear photographs showing the defect or the incorrect item.</li>
+        </ul>
+        <p>Once your claim is reviewed and approved, we will offer a replacement or a refund. Approved refunds are processed to your <strong>original payment method via Razorpay</strong>, typically within <strong>5–7 business days</strong> of approval. The time for the amount to reflect in your account depends on your bank or card issuer.</p>
+
+        <h2>Questions</h2>
+        <p>Email <a href="mailto:siddharthmahajan@arksoft.xyz">siddharthmahajan@arksoft.xyz</a> or call <a href="tel:+917018227240">+91 70182 27240</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <nav class="footer-legal">
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+        <a href="shipping.html">Shipping &amp; Delivery</a>
+        <a href="refunds.html">Cancellation &amp; Refund</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+      <div class="footer-bottom" style="border:0;">
+        <span>© <span id="year"></span> Momento. All rights reserved.</span>
+        <span class="legal">Independent fan project. Not affiliated with EA Sports, FIFA, or any club, league or player depicted.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="store-common.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

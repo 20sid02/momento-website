@@ -1,0 +1,18 @@
+# Copy this file to `.dev.vars` for local development (wrangler reads it automatically).
+# In production, set these with:  npx wrangler pages secret put <NAME>
+
+# Razorpay — get these from the Razorpay Dashboard (use rzp_test_ keys for testing)
+RAZORPAY_KEY_ID=rzp_test_xxxxxxxxxxxxx
+RAZORPAY_KEY_SECRET=your_key_secret
+RAZORPAY_WEBHOOK_SECRET=your_webhook_secret
+
+# Admin panel login password
+ADMIN_PASSWORD=change-this-password
+
+# Random long string used to sign admin session cookies
+SESSION_SECRET=replace-with-a-long-random-string
+
+# Resend API key for transactional emails (order confirmation, shipped, admin alert).
+# Get it from https://resend.com. Leave blank to disable email (orders still work).
+# ADMIN_EMAIL and EMAIL_FROM live in wrangler.toml [vars]; EMAIL_FROM's domain must be verified in Resend.
+RESEND_API_KEY=

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Momento</title>
+  <meta name="description" content="Get in touch with Momento — phone, email and support." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="store.css" />
+</head>
+<body class="store-body">
+  <header class="nav scrolled" id="nav">
+    <a class="brand" href="index.html"><span class="mark">Momento</span><span class="sub">Immortal Moments</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="shop.html">Shop</a>
+      <a href="shop.html?type=pack">Packs</a>
+      <a href="shop.html?type=momento">Momentos</a>
+      <a href="index.html#story">Story</a>
+      <a href="cart.html" class="cart-btn">Cart <span class="cart-badge" data-cart-count>0</span></a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <main class="store-main">
+    <div class="wrap prose-wrap">
+      <div class="page-head">
+        <p class="eyebrow">We're here to help</p>
+        <h1>Contact Us</h1>
+        <p>Questions about an order, a product or a custom momento? Reach out — we reply as quickly as we can.</p>
+      </div>
+
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="k">Phone / WhatsApp</div>
+          <div class="v"><a href="tel:+917018227240">+91 70182 27240</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="k">Email</div>
+          <div class="v"><a href="mailto:siddharthmahajan@arksoft.xyz">siddharthmahajan@arksoft.xyz</a></div>
+        </div>
+        <div class="contact-card">
+          <div class="k">Address</div>
+          <div class="v">Krishan Kunj, Kotla Nala, Rajgarh Road,<br />Solan, Himachal Pradesh 173212, India</div>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>Momento is operated by <strong>Siddharth Mahajan</strong>, from Krishan Kunj, Kotla Nala, Rajgarh Road, Solan, Himachal Pradesh 173212, India.</p>
+        <p><strong>Support hours:</strong> Monday–Saturday, 10:00–18:00 IST.</p>
+        <p>For order queries, please include your <strong>order reference</strong> (shown on your confirmation) so we can help faster. For refund or wrong-order claims, please also attach clear photos — see our
+          <a href="refunds.html">Cancellation &amp; Refund Policy</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <nav class="footer-legal">
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+        <a href="shipping.html">Shipping &amp; Delivery</a>
+        <a href="refunds.html">Cancellation &amp; Refund</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+      <div class="footer-bottom" style="border:0;">
+        <span>© <span id="year"></span> Momento. All rights reserved.</span>
+        <span class="legal">Independent fan project. Not affiliated with EA Sports, FIFA, or any club, league or player depicted.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="store-common.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

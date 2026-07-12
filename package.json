@@ -1,0 +1,17 @@
+{
+  "name": "momento-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Momento — collectible football card packs & momento posters. Cloudflare Pages storefront + admin.",
+  "scripts": {
+    "dev": "wrangler pages dev",
+    "deploy": "wrangler pages deploy",
+    "db:init": "wrangler d1 execute momento-db --local --file=./schema.sql",
+    "db:seed": "wrangler d1 execute momento-db --local --file=./seed.sql",
+    "db:init:remote": "wrangler d1 execute momento-db --remote --file=./schema.sql",
+    "db:seed:remote": "wrangler d1 execute momento-db --remote --file=./seed.sql"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}

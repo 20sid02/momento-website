@@ -1,0 +1,10 @@
+# Cloudflare Pages header rules.
+
+# Always revalidate HTML/CSS/JS so code/style updates appear immediately
+# (uses etags, so unchanged files still return a fast 304 Not Modified).
+/*
+  Cache-Control: no-cache
+
+# Static image assets rarely change — let them cache for a month.
+/assets/*
+  Cache-Control: public, max-age=2592000

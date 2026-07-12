@@ -1,0 +1,11 @@
+node_modules/
+.dev.vars
+.wrangler/
+dist/
+*.log
+.DS_Store
+
+# Source assets (large originals) — keep out of the deploy if you like
+/*.pdf
+*.jpg
+*.png

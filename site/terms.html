@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms &amp; Conditions — Momento</title>
+  <meta name="description" content="The terms and conditions governing use of the Momento website and purchases." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="store.css" />
+</head>
+<body class="store-body">
+  <header class="nav scrolled" id="nav">
+    <a class="brand" href="index.html"><span class="mark">Momento</span><span class="sub">Immortal Moments</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="shop.html">Shop</a>
+      <a href="shop.html?type=pack">Packs</a>
+      <a href="shop.html?type=momento">Momentos</a>
+      <a href="index.html#story">Story</a>
+      <a href="cart.html" class="cart-btn">Cart <span class="cart-badge" data-cart-count>0</span></a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </header>
+
+  <main class="store-main">
+    <div class="wrap prose-wrap">
+      <div class="page-head">
+        <p class="eyebrow">Policies</p>
+        <h1>Terms &amp; Conditions</h1>
+        <p class="updated">Last updated: 12 July 2026</p>
+      </div>
+
+      <div class="prose">
+        <p>These Terms &amp; Conditions ("Terms") govern your use of the Momento website and your purchase of our products. Momento ("we", "us", "our") is operated by Siddharth Mahajan, India. By using this site or placing an order, you agree to these Terms.</p>
+
+        <h2>Our products</h2>
+        <h3>Card packs</h3>
+        <p>Card packs contain a fixed number of collectible cards (as stated on the product). <strong>The cards in each pack are completely random.</strong> There is no fixed, guaranteed, or selectable set of cards — you cannot choose, predict, or be guaranteed any specific card, player or rarity in a pack. You acknowledge and accept this randomised nature before purchase.</p>
+        <h3>Momentos</h3>
+        <p>Momentos are <strong>custom-designed</strong> framed poster prints created by us. Each is an original design. Because they are made-to-order and printed, slight variations in colour, tone or finish between your screen and the final printed product are normal and expected.</p>
+
+        <h2>Orders &amp; acceptance</h2>
+        <p>All orders are subject to acceptance and availability. We may refuse or cancel an order (with a full refund of any amount paid) in cases including, but not limited to, suspected fraud, stock unavailability, or an error in pricing or product information.</p>
+
+        <h2>Pricing &amp; payment</h2>
+        <p>Prices are listed in Indian Rupees (₹). We may change prices at any time, but changes will not affect orders already confirmed. Payments are processed securely by our payment partner, <strong>Razorpay</strong>. We do not receive or store your full card or banking details.</p>
+
+        <h2>Shipping, cancellations &amp; refunds</h2>
+        <p>Delivery is governed by our <a href="shipping.html">Shipping &amp; Delivery Policy</a>. Cancellations and refunds are governed by our <a href="refunds.html">Cancellation &amp; Refund Policy</a>. Please read both before ordering.</p>
+
+        <h2>Intellectual property &amp; disclaimer</h2>
+        <p>The Momento name, site design, and original artwork are our property or used with permission. Momento is an <strong>independent fan project</strong> and is <strong>not affiliated with, endorsed by, or associated with</strong> EA Sports, FIFA, or any football club, league, competition or player depicted or referenced. All club names, competition names, and player likenesses remain the property of their respective owners.</p>
+
+        <h2>Acceptable use</h2>
+        <p>You agree not to misuse the site, attempt to gain unauthorised access, interfere with its operation, or use it for any unlawful purpose.</p>
+
+        <h2>Limitation of liability</h2>
+        <p>To the maximum extent permitted by law, our total liability arising from any order is limited to the amount you paid for that order. We are not liable for indirect or consequential losses.</p>
+
+        <h2>Governing law</h2>
+        <p>These Terms are governed by the laws of India, and any disputes are subject to the exclusive jurisdiction of the competent courts of Solan, Himachal Pradesh, India.</p>
+
+        <h2>Changes to these Terms</h2>
+        <p>We may update these Terms from time to time. The version published on this page at the time of your order applies to that order.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about these Terms? Email <a href="mailto:siddharthmahajan@arksoft.xyz">siddharthmahajan@arksoft.xyz</a> or call <a href="tel:+917018227240">+91 70182 27240</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <nav class="footer-legal">
+        <a href="shop.html">Shop</a>
+        <a href="contact.html">Contact</a>
+        <a href="shipping.html">Shipping &amp; Delivery</a>
+        <a href="refunds.html">Cancellation &amp; Refund</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+      <div class="footer-bottom" style="border:0;">
+        <span>© <span id="year"></span> Momento. All rights reserved.</span>
+        <span class="legal">Independent fan project. Not affiliated with EA Sports, FIFA, or any club, league or player depicted.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="store-common.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momento — Immortal Football Moments</title>
+  <meta name="description" content="Momento turns legendary football into collectible card packs and gallery-grade story posters. Rip a pack. Frame a legend. Relive the immortal." />
+  <meta name="theme-color" content="#0b0b0d" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Open Graph / Twitter. NOTE: update these absolute URLs if you move to a custom domain. -->
+  <meta property="og:site_name" content="Momento" />
+  <meta property="og:title" content="Momento — Immortal Football Moments" />
+  <meta property="og:description" content="Collectible retro FUT-style football card packs and gallery-grade framed momento posters. Rip a pack. Frame a legend. Relive the immortal." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://momento.pages.dev/" />
+  <meta property="og:image" content="https://momento.pages.dev/assets/momento-istanbul.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Momento — Immortal Football Moments" />
+  <meta name="twitter:description" content="Collectible retro FUT-style football card packs and framed momento posters of legendary football moments." />
+  <meta name="twitter:image" content="https://momento.pages.dev/assets/momento-istanbul.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="store.css" />
+</head>
+<body>
+
+  <!-- ================= NAV ================= -->
+  <header class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="Momento home">
+      <span class="mark">Momento</span>
+      <span class="sub">Immortal Moments</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="shop.html">Shop</a>
+      <a href="#packs">The Packs</a>
+      <a href="#momentos">The Momentos</a>
+      <a href="#story">Story</a>
+      <a href="cart.html" class="cart-btn">Cart <span class="cart-badge" data-cart-count>0</span></a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="hero-bg"></div>
+    <div class="hero-inner">
+      <p class="eyebrow reveal in">Collectible Football · Est. 2026</p>
+      <h1 class="reveal in">
+        History<br />
+        You Can <span class="stroke">Hold.</span>
+      </h1>
+      <p class="hero-sub reveal in d1">
+        The moments that stopped the world, reborn as <strong>Momentos</strong>.<br>
+        The best of retro <strong>FUT Cards</strong>, hold them in your hands.
+      </p>
+      <div class="hero-cta reveal in d2">
+        <a href="shop.html?type=pack" class="btn btn-gold">Shop the Packs <span class="arrow">→</span></a>
+        <a href="shop.html?type=momento" class="btn btn-ghost">Shop Momentos</a>
+      </div>
+      <!-- <div class="hero-note reveal in d3">
+        <span class="pulse"></span> Now shipping across India
+      </div> -->
+    </div>
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Istanbul 2005</span><span>The Volley 2002</span><span>Packs of Five</span>
+      <span>A4 &amp; A3 Momentos</span><span>Immortal Moments</span>
+      <span>Istanbul 2005</span><span>The Volley 2002</span><span>Packs of Five</span>
+      <span>A4 &amp; A3 Momentos</span><span>Rip · Collect · Frame</span><span>Immortal Moments</span>
+    </div>
+  </div>
+
+  <!-- ================= COLLECTIONS ================= -->
+  <section class="collections">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">The Collection</p>
+        <h2>Two ways to<br />hold history</h2>
+        <p>Every Momento is a piece of football folklore you can own — whether you rip it open or hang it on the wall.</p>
+      </div>
+
+      <div class="split">
+        <article class="collect-card cc-packs reveal">
+          <div class="cc-bg"></div>
+          <div class="cc-content">
+            <h3>The Packs</h3>
+            <p class="cc-tag">Five cards. One rip.</p>
+            <p>Premium collectible player cards, sealed in packs of five. You never know who you'll pull — golds, legends and special editions await.</p>
+            <a href="#packs" class="cc-link">Discover the packs <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="collect-card cc-momentos reveal d1">
+          <div class="cc-bg"></div>
+          <div class="cc-content">
+            <h3>The Momentos</h3>
+            <p class="cc-tag">The moment, framed.</p>
+            <p>Gallery-grade A4 &amp; A3 story posters. The stadium, the date, the six minutes of madness — one immortal moment, printed to keep.</p>
+            <a href="#momentos" class="cc-link">See the momentos <span class="arrow">→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE PACKS ================= -->
+  <section class="packs" id="packs">
+    <div class="wrap">
+      <div class="packs-grid">
+        <!-- fanned cards -->
+        <div class="card-stage reveal" id="cardStage">
+          <!-- Card 1 -->
+          <div class="fut fut-1">
+            <div class="fut-card">
+              <div class="fut-shine"></div>
+              <div class="fut-photo">
+                <svg viewBox="0 0 100 120" aria-hidden="true"><path fill="#7a5f1e" d="M50 8a18 18 0 100 36 18 18 0 000-36zM16 120c0-24 15-40 34-40s34 16 34 40z"/></svg>
+              </div>
+              <div class="fut-top">
+                <div class="fut-rating"><span class="num">88</span><span class="pos">RW</span></div>
+                <div class="fut-badges"><span class="flag flag-bra"></span><span class="crest crest-a"></span></div>
+              </div>
+              <div class="fut-name">Da Silva</div>
+              <div class="fut-stats">
+                <div><span class="v">94</span><span class="l">PAC</span></div>
+                <div><span class="v">89</span><span class="l">DRI</span></div>
+                <div><span class="v">82</span><span class="l">SHO</span></div>
+                <div><span class="v">34</span><span class="l">DEF</span></div>
+                <div><span class="v">80</span><span class="l">PAS</span></div>
+                <div><span class="v">67</span><span class="l">PHY</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 (center, mystery) -->
+          <div class="fut fut-2">
+            <div class="fut-card mystery">
+              <div class="q">?</div>
+              <div class="m-label">Sealed</div>
+            </div>
+          </div>
+
+          <!-- Card 3 (icon) -->
+          <div class="fut fut-3">
+            <div class="fut-card icon">
+              <div class="fut-shine"></div>
+              <div class="fut-photo">
+                <svg viewBox="0 0 100 120" aria-hidden="true"><path fill="#6b5a2a" d="M50 8a18 18 0 100 36 18 18 0 000-36zM16 120c0-24 15-40 34-40s34 16 34 40z"/></svg>
+              </div>
+              <div class="fut-top">
+                <div class="fut-rating"><span class="num">91</span><span class="pos">CAM</span></div>
+                <div class="fut-badges"><span class="flag flag-esp"></span><span class="crest crest-b"></span></div>
+              </div>
+              <div class="fut-name">Icon</div>
+              <div class="fut-stats">
+                <div><span class="v">85</span><span class="l">PAC</span></div>
+                <div><span class="v">95</span><span class="l">DRI</span></div>
+                <div><span class="v">88</span><span class="l">SHO</span></div>
+                <div><span class="v">45</span><span class="l">DEF</span></div>
+                <div><span class="v">92</span><span class="l">PAS</span></div>
+                <div><span class="v">70</span><span class="l">PHY</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- copy -->
+        <div class="packs-copy reveal d1">
+          <p class="eyebrow">The Packs</p>
+          <h2 class="display" style="font-size: clamp(2.2rem, 5vw, 3.6rem);">Pack of 5 Cards<br />Jumbo Pack of 10 cards<br /><span class="gold-text">Possible Holographic rares</span></h2>
+          <p style="color: var(--muted); margin-top: 1.2rem; max-width: 46ch;">
+            Each pack holds five player cards on premium stock. Some are commons.
+            Some are gold. And every so often, you pull something rare. The thrill isn't
+            knowing — it's the rip.
+          </p>
+          <ul class="feature-list">
+            <li><span class="fi-num">01</span><span class="fi-text"><strong>Five cards per pack</strong><span>Sealed and shuffled — pure luck of the draw.</span></span></li>
+            <li><span class="fi-num">02</span><span class="fi-text"><strong>Premium 350gsm stock</strong><span>Heavyweight, soft-touch, built to be kept.</span></span></li>
+            <li><span class="fi-num">03</span><span class="fi-text"><strong>Golds &amp; special editions</strong><span>Rare pulls worth chasing and trading.</span></span></li>
+            <li><span class="fi-num">04</span><span class="fi-text"><strong>Collect the set</strong><span>Complete squads, chase legends, trade duplicates.</span></span></li>
+          </ul>
+          <a href="shop.html?type=pack" class="btn btn-gold">Shop the packs <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- how a pack works -->
+      <div class="steps">
+        <div class="step reveal"><div class="n">1</div><h4>Choose your pack</h4><p>Pick your drop — base packs, themed sets or premium gold packs.</p></div>
+        <div class="step reveal d1"><div class="n">2</div><h4>Rip it open</h4><p>Break the seal. Five cards, face down, waiting to be revealed.</p></div>
+        <div class="step reveal d2"><div class="n">3</div><h4>Discover your five</h4><p>Flip them over. Collect, trade, and hunt down the ones that got away.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE MOMENTOS ================= -->
+  <section class="momentos" id="momentos">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">The Momentos</p>
+        <h2>Some moments<br />deserve a frame</h2>
+        <p>Each Momento is a designed story poster — the stadium, the date, the two sides, and the moment
+           football stood still. Available framed in A4 &amp; A3.</p>
+      </div>
+
+      <div class="momento-gallery">
+        <figure class="momento reveal">
+          <div class="momento-frame"><img src="assets/momento-istanbul.jpg" alt="The Miracle of Istanbul — Liverpool FC 2005 momento poster" loading="lazy" /></div>
+          <figcaption class="momento-cap">
+            <div>
+              <h3>The Miracle<br />of Istanbul</h3>
+              <p class="tag">Against all odds.</p>
+            </div>
+            <div class="m-meta">Atatürk Stadium<br />May 25, 2005<br />Milan · Liverpool</div>
+          </figcaption>
+        </figure>
+
+        <figure class="momento reveal d1">
+          <div class="momento-frame"><img src="assets/momento-zidane.jpg" alt="Zidane's volley — Real Madrid 2002 momento poster" loading="lazy" /></div>
+          <figcaption class="momento-cap">
+            <div>
+              <h3>Pure<br />Perfection</h3>
+              <p class="tag">Absolute royalty.</p>
+            </div>
+            <div class="m-meta">Hampden Park<br />May 15, 2002<br />Madrid · Leverkusen</div>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="momento-detail">
+        <div class="md-item reveal"><span class="k">The Format</span><p>A designed poster telling one immortal moment — posterised artwork, the fixture, the date, and the story in words.</p></div>
+        <div class="md-item reveal d1"><span class="k">The Sizes</span><p>Available framed in A4 for the desk and A3 for the wall. Museum-style matting, ready to hang out of the box.</p></div>
+        <div class="md-item reveal d2"><span class="k">The Growing Library</span><p>New moments added regularly. Istanbul and the Volley are only the beginning of the collection.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MANIFESTO ================= -->
+  <section class="manifesto" id="story">
+    <div class="wrap reveal">
+      <p class="eyebrow" style="text-align:center;">Why Momento</p>
+      <p class="big">
+        Football gives us moments we never forget — the comebacks, the volleys,
+        the six minutes of madness. <em>Momento exists to make those moments something
+        you can hold, collect and keep</em> long after the final whistle.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED / SHOP ================= -->
+  <section class="featured" id="shop">
+    <div class="wrap">
+      <div class="section-head featured-head reveal">
+        <p class="eyebrow">Start Collecting</p>
+        <h2>Shop the collection</h2>
+        <p>Packs to rip and momentos to frame — pick your first piece of football folklore.</p>
+      </div>
+      <div class="product-grid" id="featuredGrid">
+        <div class="loading">Loading the collection…</div>
+      </div>
+      <div class="featured-cta reveal">
+        <a href="shop.html" class="btn btn-gold">Shop everything <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div>
+          <span class="brand"><span class="mark">Momento</span></span>
+          <p class="f-tag">Immortal football moments — reborn as collectible card packs and gallery-grade momentos.</p>
+        </div>
+        <div class="footer-cols">
+          <div class="footer-col">
+            <h5>Shop</h5>
+            <a href="shop.html?type=pack">Card Packs</a>
+            <a href="shop.html?type=momento">Momentos</a>
+            <a href="shop.html">All products</a>
+          </div>
+          <div class="footer-col">
+            <h5>Company</h5>
+            <a href="#story">Our Story</a>
+            <a href="track.html">Track Order</a>
+            <a href="contact.html">Contact</a>
+            <a href="#top">Back to top</a>
+          </div>
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <a href="terms.html">Terms &amp; Conditions</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="refunds.html">Cancellation &amp; Refund</a>
+            <a href="shipping.html">Shipping &amp; Delivery</a>
+          </div>
+          <div class="footer-col">
+            <h5>Social</h5>
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="TikTok">TikTok</a>
+            <a href="#" aria-label="X">X / Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Momento. All rights reserved.</span>
+        <span class="legal">Momento is an independent fan project and is not affiliated with, endorsed by, or associated with EA Sports, FIFA, or any club, league or player depicted.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="featured.js"></script>
+  <script>
+    // reflect cart count in the nav badge (landing page uses its own nav JS)
+    (function () {
+      try {
+        var c = JSON.parse(localStorage.getItem("momento_cart") || "[]");
+        var n = c.reduce(function (a, i) { return a + (i.qty || 0); }, 0);
+        document.querySelectorAll("[data-cart-count]").forEach(function (el) {
+          el.textContent = n; el.style.display = n ? "grid" : "none";
+        });
+      } catch (e) {}
+    })();
+  </script>
+</body>
+</html>
