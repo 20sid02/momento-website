@@ -2,7 +2,7 @@
   "name": "momento-store",
   "version": "1.0.0",
   "private": true,
-  "description": "Momento — collectible football card packs & momento posters. Cloudflare Pages storefront + admin.",
+  "description": "Momentos Footy — collectible football card packs & momento posters. Cloudflare Pages storefront + admin.",
   "scripts": {
     "dev": "wrangler pages dev",
     "deploy": "wrangler pages deploy",

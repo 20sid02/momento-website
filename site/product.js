@@ -54,21 +54,21 @@
   // Fill per-product SEO: title, description, Open Graph/Twitter, Product JSON-LD.
   function setSeo(p) {
     var m = p.meta || {};
-    document.title = p.name + " — Momento";
+    document.title = p.name + " — Momentos Footy";
     var abs = function (u) { return u ? new URL(u, location.origin).href : ""; };
     // Match the self-referencing canonical (Pages serves the clean, .html-less path).
     var url = location.origin + location.pathname + "?slug=" + encodeURIComponent(p.slug);
     var img = abs(p.image);
     var desc = (p.description || m.tagline || "").trim() ||
-      ("A collectible " + (p.type === "pack" ? "football card pack" : "framed momento poster") + " from Momento.");
+      ("A collectible " + (p.type === "pack" ? "football card pack" : "framed momento poster") + " from Momentos Footy.");
     desc = desc.replace(/\s+/g, " ").slice(0, 300);
 
     setMeta("name", "description", desc);
-    setMeta("property", "og:title", p.name + " — Momento");
+    setMeta("property", "og:title", p.name + " — Momentos Footy");
     setMeta("property", "og:description", desc);
     setMeta("property", "og:url", url);
     if (img) setMeta("property", "og:image", img);
-    setMeta("name", "twitter:title", p.name + " — Momento");
+    setMeta("name", "twitter:title", p.name + " — Momentos Footy");
     setMeta("name", "twitter:description", desc);
     if (img) setMeta("name", "twitter:image", img);
 
@@ -86,7 +86,7 @@
       name: p.name,
       description: desc,
       url: url,
-      brand: { "@type": "Brand", name: "Momento" },
+      brand: { "@type": "Brand", name: "Momentos Footy" },
       category: p.type === "pack" ? "Trading Card Packs" : "Framed Posters",
     };
     if (img) ld.image = img;

@@ -210,7 +210,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .hero-bg::before {
   content: "";
   position: absolute; inset: 0;
-  background: url("assets/cards-spread.jpg") center/cover no-repeat;
+  background: url("assets/cards-fan.jpg") center/cover no-repeat;
   opacity: 0.12;
   filter: grayscale(0.2) contrast(1.05);
   mask-image: linear-gradient(90deg, transparent, #000 40%, #000 100%);
@@ -315,8 +315,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .collect-card .cc-bg { position: absolute; inset: 0; z-index: 0; transition: transform 0.8s ease; }
 .collect-card:hover .cc-bg { transform: scale(1.05); }
 .collect-card .cc-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,13,.25) 0%, rgba(11,11,13,.55) 55%, rgba(11,11,13,.94) 100%); }
-.cc-packs .cc-bg { background: url("assets/cards-spread.jpg") center/cover; }
-.cc-momentos .cc-bg { background: var(--pitch); }
+.cc-packs .cc-bg { background: url("assets/cards-grid.jpg") center/cover; }
+.cc-momentos .cc-bg { background: url("assets/story-istanbul.jpg") center/cover; }
 .cc-collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
 .cc-collage img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .collect-card .cc-content { position: relative; z-index: 2; }

@@ -49,7 +49,7 @@
     app.innerHTML = "";
     app.append(el("div", { class: "login-wrap" },
       el("div", { class: "login-card" },
-        el("div", { class: "mark" }, "Momento"),
+        el("div", { class: "mark" }, "Momentos Footy"),
         el("p", {}, "Admin access"),
         form)));
     setTimeout(function () { pass.focus(); }, 50);
@@ -65,7 +65,7 @@
 
     app.append(
       el("div", { class: "admin-bar" },
-        el("span", { class: "brand" }, el("span", { class: "mark" }, "Momento"), el("span", { class: "sub" }, " Admin")),
+        el("span", { class: "brand" }, el("span", { class: "mark" }, "Momentos Footy"), el("span", { class: "sub" }, " Admin")),
         el("div", { class: "admin-actions" }, viewShop, logout)),
       el("div", { class: "admin-wrap" },
         el("div", { class: "admin-tabs" }, tabProducts, tabOrders),

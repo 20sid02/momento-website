@@ -63,7 +63,7 @@ export async function onRequestPost({ request, env }) {
     amount,
     currency,
     key_id: env.RAZORPAY_KEY_ID,
-    store_name: env.STORE_NAME || "Momento",
+    store_name: env.STORE_NAME || "Momentos Footy",
     customer: { name, email, phone },
   });
 }

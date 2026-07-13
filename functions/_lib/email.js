@@ -36,7 +36,7 @@ function shell(title, inner) {
   return `<!doctype html><html><body style="margin:0;background:#f4f2ec;font-family:Arial,Helvetica,sans-serif;color:#1a1a1a">
   <div style="max-width:560px;margin:0 auto;padding:24px 16px">
     <div style="background:#0b0b0d;border-radius:10px 10px 0 0;padding:22px 28px">
-      <div style="font-family:Georgia,serif;font-weight:bold;font-size:22px;letter-spacing:1px;color:#f6dd94">MOMENTO</div>
+      <div style="font-family:Georgia,serif;font-weight:bold;font-size:22px;letter-spacing:1px;color:#f6dd94">MOMENTOS FOOTY</div>
       <div style="font-size:10px;letter-spacing:3px;color:#a49f95;text-transform:uppercase;margin-top:2px">Immortal Football Moments</div>
     </div>
     <div style="background:#ffffff;border:1px solid #e6e1d6;border-top:0;border-radius:0 0 10px 10px;padding:28px">
@@ -44,7 +44,7 @@ function shell(title, inner) {
       ${inner}
     </div>
     <p style="color:#8a857c;font-size:12px;text-align:center;margin:18px 0 0">
-      Momento · Solan, Himachal Pradesh, India · <a href="mailto:siddharthmahajan@arksoft.xyz" style="color:#8a857c">siddharthmahajan@arksoft.xyz</a><br>
+      Momentos Footy · Solan, Himachal Pradesh, India · <a href="mailto:siddharthmahajan@arksoft.xyz" style="color:#8a857c">siddharthmahajan@arksoft.xyz</a><br>
       Independent fan project, not affiliated with EA Sports or FIFA.
     </p>
   </div></body></html>`;
@@ -71,7 +71,7 @@ export function orderConfirmationEmail(order) {
     ${itemsTable(items)}
     <p style="text-align:right;font-size:16px;margin:14px 0 20px"><strong>Total paid: ${inr(order.amount_paise)}</strong></p>
     <p style="font-size:14px;line-height:1.6;color:#333">We'll email you again with tracking as soon as it ships. You can also track your order any time using the email and phone you checked out with.</p>`;
-  return { subject: `Order confirmed — Momento #${ref}`, html: shell("Your order is confirmed 🎉", inner) };
+  return { subject: `Order confirmed — Momentos Footy #${ref}`, html: shell("Your order is confirmed 🎉", inner) };
 }
 
 export function adminOrderAlertEmail(order) {
@@ -104,11 +104,11 @@ export function orderShippedEmail(order) {
        </div>`
     : "";
   const inner = `
-    <p style="font-size:14px;line-height:1.6;color:#333">Good news, ${esc(c.name || "there")} — your Momento order <strong>#${ref}</strong> is on its way.</p>
+    <p style="font-size:14px;line-height:1.6;color:#333">Good news, ${esc(c.name || "there")} — your Momentos Footy order <strong>#${ref}</strong> is on its way.</p>
     ${track}
     ${itemsTable(items)}
     <p style="font-size:13px;color:#666;margin-top:16px">Questions? Just reply to this email or reach us at siddharthmahajan@arksoft.xyz.</p>`;
-  return { subject: `Your Momento order has shipped 📦 #${ref}`, html: shell("Your order has shipped", inner) };
+  return { subject: `Your Momentos Footy order has shipped 📦 #${ref}`, html: shell("Your order has shipped", inner) };
 }
 
 export function orderDeliveredEmail(order) {
@@ -116,9 +116,9 @@ export function orderDeliveredEmail(order) {
   const items = parse(order.items, []);
   const ref = String(order.id).slice(0, 8).toUpperCase();
   const inner = `
-    <p style="font-size:14px;line-height:1.6;color:#333">Hi ${esc(c.name || "there")}, your Momento order <strong>#${ref}</strong> has been marked as <strong>delivered</strong>. We hope you love it. 🏆</p>
+    <p style="font-size:14px;line-height:1.6;color:#333">Hi ${esc(c.name || "there")}, your Momentos Footy order <strong>#${ref}</strong> has been marked as <strong>delivered</strong>. We hope you love it. 🏆</p>
     ${itemsTable(items)}
     <p style="font-size:14px;line-height:1.6;color:#333;margin-top:16px">Rip your packs, frame your momentos, and relive the moment. If anything isn't right with your order, reply within 48 hours and we'll help — see our refund policy for details.</p>
     <p style="font-size:13px;color:#666">Thank you for collecting an immortal moment with us.</p>`;
-  return { subject: `Delivered ✓ Your Momento order #${ref}`, html: shell("Your order has been delivered", inner) };
+  return { subject: `Delivered ✓ Your Momentos Footy order #${ref}`, html: shell("Your order has been delivered", inner) };
 }

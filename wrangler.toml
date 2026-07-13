@@ -1,4 +1,4 @@
-# Cloudflare Pages configuration for Momento
+# Cloudflare Pages configuration for Momentos Footy
 # Static assets live in ./site ; API lives in ./functions (Pages Functions)
 
 name = "momento"
@@ -21,12 +21,12 @@ bucket_name = "momento-media"
 
 # ---- Public, non-secret config ----
 [vars]
-STORE_NAME = "Momento"
+STORE_NAME = "Momentos Footy"
 CURRENCY = "INR"
 CURRENCY_SYMBOL = "₹"
 # Email (Resend). EMAIL_FROM's domain must be verified in your Resend account.
 ADMIN_EMAIL = "siddharthmahajan@arksoft.xyz"
-EMAIL_FROM = "Momento <orders@arksoft.xyz>"
+EMAIL_FROM = "Momentos Footy <orders@arksoft.xyz>"
 
 # ---- Secrets (DO NOT put here). Set with `wrangler pages secret put <NAME>`:
 #   RAZORPAY_KEY_ID

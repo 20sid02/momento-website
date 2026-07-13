@@ -36,7 +36,7 @@
   // Static fallback (e.g. opened without a backend) — links to the two categories.
   function fallback() {
     grid.innerHTML =
-      '<a class="pcard" href="shop.html?type=pack"><div class="pcard-media"><span class="pcard-type">Card Packs</span><img src="assets/cards-spread.jpg" alt="Card packs"></div><div class="pcard-body"><h3>Card Packs</h3><p class="p-desc">Five collectible cards, sealed and shuffled — every rip a surprise.</p><div class="pcard-foot"><span class="cc-link" style="font-size:.78rem">Shop packs →</span></div></div></a>' +
+      '<a class="pcard" href="shop.html?type=pack"><div class="pcard-media"><span class="pcard-type">Card Packs</span><img src="assets/cards-grid.jpg" alt="Card packs"></div><div class="pcard-body"><h3>Card Packs</h3><p class="p-desc">Five collectible cards, sealed and shuffled — every rip a surprise.</p><div class="pcard-foot"><span class="cc-link" style="font-size:.78rem">Shop packs →</span></div></div></a>' +
       '<a class="pcard" href="shop.html?type=momento"><div class="pcard-media momento"><span class="pcard-type">Momentos</span><img src="assets/momento-istanbul.jpg" alt="Momentos"></div><div class="pcard-body"><h3>Momentos</h3><p class="p-desc">Framed A4 &amp; A3 story posters of legendary moments.</p><div class="pcard-foot"><span class="cc-link" style="font-size:.78rem">Shop momentos →</span></div></div></a>';
   }
 

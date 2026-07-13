@@ -1,4 +1,4 @@
-// Shared helpers for Momento API (Cloudflare Pages Functions)
+// Shared helpers for Momentos Footy API (Cloudflare Pages Functions)
 
 export function json(data, status = 200, headers = {}) {
   return new Response(JSON.stringify(data), {

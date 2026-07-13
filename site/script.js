@@ -1,5 +1,5 @@
 /* ============================================================
-   MOMENTO — interactions
+   MOMENTOS FOOTY — interactions
    ============================================================ */
 (function () {
   "use strict";
@@ -24,8 +24,8 @@
     var ld = {
       "@context": "https://schema.org",
       "@type": "Store",
-      name: "Momento",
-      alternateName: "Momento — Immortal Football Moments",
+      name: "Momentos Footy",
+      alternateName: "Momentos Footy — Immortal Football Moments",
       description: "Collectible retro FUT-style football card packs and gallery-grade framed momento posters of legendary football moments.",
       url: o + "/",
       logo: o + "/favicon.svg",

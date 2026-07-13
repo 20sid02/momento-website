@@ -105,7 +105,7 @@
       order_id: data.rp_order_id,
       amount: data.amount,
       currency: data.currency,
-      name: data.store_name || "Momento",
+      name: data.store_name || "Momentos Footy",
       description: "Order " + data.order_id.slice(0, 8),
       prefill: { name: customer.name, email: customer.email, contact: customer.phone },
       theme: { color: "#e7c46a" },
