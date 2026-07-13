@@ -6,9 +6,10 @@ function xmlEscape(s) {
 export async function onRequestGet({ request, env }) {
   const origin = new URL(request.url).origin;
 
+  // Clean, .html-less paths — these are the canonical URLs Pages serves.
   const staticPaths = [
-    "/", "/shop.html", "/shop.html?type=pack", "/shop.html?type=momento",
-    "/contact.html", "/shipping.html", "/refunds.html", "/terms.html", "/privacy.html",
+    "/", "/shop", "/shop?type=pack", "/shop?type=momento",
+    "/contact", "/shipping", "/refunds", "/terms", "/privacy",
   ];
   const urls = staticPaths.map((p) => ({ loc: origin + p }));
 
@@ -18,7 +19,7 @@ export async function onRequestGet({ request, env }) {
       .all();
     for (const r of results || []) {
       urls.push({
-        loc: origin + "/product.html?slug=" + encodeURIComponent(r.slug),
+        loc: origin + "/product?slug=" + encodeURIComponent(r.slug),
         lastmod: r.created_at ? new Date(r.created_at * 1000).toISOString().slice(0, 10) : null,
       });
     }

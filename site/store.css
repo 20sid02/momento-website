@@ -200,6 +200,54 @@
 .t-track .courier { color: var(--muted); font-size: 0.85rem; margin-top: 0.15rem; }
 .t-cancelled { color: #e07a7a; font-family: var(--font-cond); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; margin-top: 1rem; }
 
+/* ── stories: frame badges, set ribbon, holo perk, story block ── */
+.frame-badge {
+  align-self: flex-start;
+  font-family: var(--font-cond); text-transform: uppercase; letter-spacing: 0.1em;
+  font-size: 0.64rem; font-weight: 600; color: var(--muted-dim);
+  border: 1px solid var(--line-soft); border-radius: 999px; padding: 0.25rem 0.6rem;
+}
+.frame-badge.set { color: var(--gold); border-color: var(--line); }
+
+.pcard-set { border-color: var(--line); }
+.save-ribbon {
+  position: absolute; top: 0.7rem; right: 0.7rem; z-index: 2;
+  background: var(--gold); color: #241a05;
+  font-family: var(--font-cond); font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; font-size: 0.66rem; padding: 0.32rem 0.6rem; border-radius: 999px;
+}
+
+/* free holographic card with every A3 */
+.holo-note {
+  display: flex; align-items: center; gap: 0.55rem;
+  border: 1px dashed var(--line); border-radius: 6px;
+  padding: 0.7rem 0.9rem; margin: 0.2rem 0 0.4rem;
+  font-family: var(--font-cond); text-transform: uppercase; letter-spacing: 0.06em;
+  font-size: 0.74rem; color: var(--muted);
+}
+.holo-note .holo-star { color: var(--gold); font-size: 0.95rem; line-height: 1; }
+.holo-note.on { border-style: solid; border-color: var(--gold); background: rgba(231,196,106,0.08); color: var(--gold); }
+
+/* story block below the buy box */
+.story-section { border-top: 1px solid var(--line-soft); margin-top: 3rem; padding-top: 2.4rem; }
+.story-head .eyebrow { color: var(--gold); }
+.story-head h2 { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: 0.02em; font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1; margin-top: 0.3rem; }
+.story-lede, .story-save { color: var(--muted); margin: 0.9rem 0 0; }
+.story-save { color: var(--gold); font-family: var(--font-cond); letter-spacing: 0.02em; }
+
+.frame-strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1.4rem 0; }
+.frame-thumb { display: flex; flex-direction: column; border: 1px solid var(--line-soft); border-radius: 6px; overflow: hidden; background: var(--surface); transition: border-color 0.2s ease, transform 0.2s ease; }
+.frame-thumb:hover { border-color: var(--line); transform: translateY(-3px); }
+.frame-thumb.is-current { border-color: var(--gold); }
+.frame-thumb-media { position: relative; aspect-ratio: 4 / 3; background: linear-gradient(145deg,#1a1712,#0c0a07); }
+.frame-thumb-media img { width: 100%; height: 100%; object-fit: contain; padding: 8px; }
+.frame-no { position: absolute; top: 0.5rem; left: 0.5rem; font-family: var(--font-cond); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.6rem; color: var(--gold); background: rgba(0,0,0,0.5); border: 1px solid var(--line); border-radius: 999px; padding: 0.2rem 0.5rem; }
+.frame-thumb-body { padding: 0.7rem 0.85rem 0.9rem; display: flex; flex-direction: column; gap: 0.25rem; }
+.frame-thumb-name { font-family: var(--font-cond); text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.95rem; line-height: 1.05; }
+.frame-thumb-price { font-size: 0.75rem; color: var(--muted-dim); }
+.frame-thumb.is-current .frame-thumb-price { color: var(--gold); }
+.set-cta { margin-top: 0.6rem; display: inline-flex; }
+
 @media (max-width: 860px) {
   .pdp { grid-template-columns: 1fr; }
   .pdp-media { position: static; }

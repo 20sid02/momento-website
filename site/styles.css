@@ -316,7 +316,9 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .collect-card:hover .cc-bg { transform: scale(1.05); }
 .collect-card .cc-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,13,.25) 0%, rgba(11,11,13,.55) 55%, rgba(11,11,13,.94) 100%); }
 .cc-packs .cc-bg { background: url("assets/cards-spread.jpg") center/cover; }
-.cc-momentos .cc-bg { background: linear-gradient(135deg, var(--crimson-2), #2a1414 55%, var(--pitch)); }
+.cc-momentos .cc-bg { background: var(--pitch); }
+.cc-collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; }
+.cc-collage img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .collect-card .cc-content { position: relative; z-index: 2; }
 .collect-card h3 { font-family: var(--font-display); text-transform: uppercase; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 0.95; }
 .collect-card .cc-tag { font-family: var(--font-serif); font-style: italic; color: var(--gold); font-size: 1.15rem; margin: 0.4rem 0 0.9rem; }
@@ -340,6 +342,9 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .card-stage:hover .fut-1 { transform: rotate(-17deg) translateX(-128px) translateY(6px) scale(.92); }
 .card-stage:hover .fut-3 { transform: rotate(17deg) translateX(128px) translateY(6px) scale(.92); }
 .card-stage:hover .fut-2 { transform: translateY(-18px) scale(1.02); }
+
+/* real card artwork */
+.fut-img { display: block; width: 100%; height: auto; filter: drop-shadow(0 20px 34px rgba(0,0,0,0.55)); }
 
 /* the card itself */
 .fut-card {

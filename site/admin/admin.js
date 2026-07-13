@@ -10,6 +10,10 @@
       ["venue", "Venue", "e.g. Atatürk Olympic Stadium"],
       ["date_text", "Date", "e.g. May 25, 2005"],
       ["tagline", "Tagline", "e.g. Against all odds."],
+      ["story", "Story ID", "slug shared by all frames of a story, e.g. istanbul-2005"],
+      ["story_title", "Story title", "e.g. Istanbul 2005"],
+      ["frame", "Frame number", "e.g. 1 — leave blank on the Complete-Set product"],
+      ["frames", "Complete Set: frame IDs", "comma-separated slugs; fill ONLY on the set product"],
     ],
     pack: [
       ["pack_size", "Cards per pack", "e.g. 5"],
