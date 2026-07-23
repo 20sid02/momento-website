@@ -29,6 +29,23 @@
 
   var selected = null;
   var qty = 1;
+  // For a set: the linked frames' full data, so the "Save %" badge can track the selected tier.
+  var setFrameData = null;
+
+  // Refresh the price-side badge and the story-section sentence for the current selection.
+  function updateSaveUI() {
+    var pct = (setFrameData && selected) ? Store.setSavePct(selected.label, selected.price_paise, setFrameData) : 0;
+    var badge = document.getElementById("pdpSaveBadge");
+    if (badge) {
+      if (pct > 0) { badge.textContent = "Save " + pct + "%"; badge.style.display = ""; }
+      else { badge.style.display = "none"; }
+    }
+    var line = document.getElementById("pdpStorySave");
+    if (line) {
+      line.style.display = pct > 0 ? "" : "none";
+      if (pct > 0) line.textContent = "Buy the set and save " + pct + "% versus the frames on their own.";
+    }
+  }
 
   Store.api("/api/products/" + encodeURIComponent(slug))
     .then(function (data) { render(data.product); })
@@ -115,6 +132,9 @@
     selected = inStock[0] || p.variants[0] || null;
 
     var priceEl = el("div", { class: "price", id: "pdpPrice", style: "font-size:1.6rem" }, selected ? Store.money(selected.price_paise) : "—");
+    // Sets get a "Save ₹X" badge beside the price; renderStoryBlock fills it once the frame prices load.
+    var saveBadge = isSet(p) ? el("span", { class: "pdp-save-badge", id: "pdpSaveBadge", style: "display:none" }) : null;
+    var priceRow = el("div", { class: "pdp-price-row" }, priceEl, saveBadge);
 
     var variantList = el("div", { class: "variant-list" },
       p.variants.map(function (v) {
@@ -132,19 +152,21 @@
       })
     );
 
-    // Free holographic card with every A3 framed (single frame or set).
-    var hasA3 = p.variants.some(function (v) { return /a3/i.test(v.label); });
-    var holoNote = el("div", { class: "holo-note", style: hasA3 ? "" : "display:none" });
+    // Free holographic card: with every A3 framed, AND with every set (any size).
+    var isSetProduct = isSet(p);
+    var eligible = isSetProduct || p.variants.some(function (v) { return /a3/i.test(v.label); });
+    var holoNote = el("div", { class: "holo-note", style: eligible ? "" : "display:none" });
     function updateHolo() {
-      if (!hasA3) return;
-      var on = selected && /a3/i.test(selected.label);
+      if (!eligible) return;
+      // Sets always include the card; singles only on the A3 variant.
+      var on = isSetProduct || (selected && /a3/i.test(selected.label));
       holoNote.className = "holo-note" + (on ? " on" : "");
       holoNote.innerHTML = "";
-      holoNote.append(
-        el("span", { class: "holo-star" }, "★"),
-        el("span", {}, on
-          ? "Your A3 framed includes a FREE holographic card."
-          : "Free holographic card with every A3 framed."));
+      var text = isSetProduct
+        ? "Every set includes a FREE holographic card."
+        : (on ? "Your A3 framed includes a FREE holographic card."
+              : "Free holographic card with every A3 framed.");
+      holoNote.append(el("span", { class: "holo-star" }, "★"), el("span", {}, text));
     }
 
     function pick(v, node) {
@@ -153,6 +175,7 @@
       node.classList.add("selected");
       priceEl.textContent = Store.money(v.price_paise);
       updateHolo();
+      updateSaveUI();
     }
 
     var qtyInput = el("input", { type: "text", value: "1", inputmode: "numeric", "aria-label": "Quantity" });
@@ -200,7 +223,7 @@
       infoChildren.push(el("p", { class: "pdp-desc", style: "margin-top:0" }, "Each pack contains " + m.pack_size + " collectible cards."));
     }
 
-    infoChildren.push(priceEl, variantList, holoNote,
+    infoChildren.push(priceRow, variantList, holoNote,
       el("div", { class: "qty-row" }, el("span", { style: "color:var(--muted);font-family:var(--font-cond);text-transform:uppercase;letter-spacing:.1em;font-size:.8rem" }, "Quantity"), qtyBox),
       addBtn, msg);
 
@@ -233,15 +256,18 @@
   function setContents(p, slugs, bySlug) {
     var frames = slugs.map(function (s) { return bySlug[s]; }).filter(Boolean);
     if (!frames.length) return null;
-    var sum = frames.reduce(function (a, f) { return a + f.price_from; }, 0);
-    var save = sum - p.price_from;
-    return el("section", { class: "story-section" },
+    // Hand the frame data to the badge/sentence updaters, then paint for the current selection.
+    setFrameData = frames;
+    var section = el("section", { class: "story-section" },
       el("div", { class: "story-head" },
         el("p", { class: "eyebrow" }, "The complete set"),
-        el("h2", {}, "Both frames of the story")),
+        el("h2", {}, frames.length === 2 ? "Both frames of the story"
+                                         : "All " + frames.length + " frames of the story")),
       el("div", { class: "frame-strip" }, frames.map(function (f) { return frameLink(f, null); })),
-      save > 0 ? el("p", { class: "story-save" },
-        "Buy the set and save " + Store.money(save) + " versus the frames on their own.") : null);
+      el("p", { class: "story-save", id: "pdpStorySave", style: "display:none" }));
+    // Element exists in the DOM only after append; defer the fill.
+    setTimeout(updateSaveUI, 0);
+    return section;
   }
 
   function frameStory(p, storyId, all) {
@@ -259,10 +285,10 @@
       el("div", { class: "frame-strip" }, siblings.map(function (f) { return frameLink(f, p.slug); })),
     ];
     if (set) {
-      var sum = siblings.reduce(function (a, f) { return a + f.price_from; }, 0);
-      var save = sum - set.price_from;
+      var fv = Store.fromVariant(set);
+      var pct = fv ? Store.setSavePct(fv.label, fv.price_paise, siblings) : 0;
       children.push(el("a", { class: "btn btn-gold set-cta", href: "product.html?slug=" + encodeURIComponent(set.slug) },
-        save > 0 ? "Get the complete set — save " + Store.money(save) + " →" : "Get the complete set →"));
+        pct > 0 ? "Get the complete set — save " + pct + "% →" : "Get the complete set →"));
     }
     return el("section", { class: "story-section" }, children);
   }

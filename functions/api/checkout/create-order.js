@@ -26,7 +26,7 @@ export async function onRequestPost({ request, env }) {
   for (const it of itemsIn) {
     const qty = Math.max(1, Math.min(20, Math.round(Number(it.qty) || 1)));
     const variant = await env.DB.prepare(
-      `SELECT v.*, p.name AS pname, p.type AS ptype
+      `SELECT v.*, p.name AS pname, p.type AS ptype, p.meta AS pmeta
          FROM variants v JOIN products p ON p.id = v.product_id
         WHERE v.id = ? AND p.active = 1`
     ).bind(it.variant_id).first();
@@ -35,9 +35,18 @@ export async function onRequestPost({ request, env }) {
       return error(`Only ${variant.stock} left of "${variant.pname}"`, 409);
     }
     amount += variant.price_paise * qty;
+
+    // Free holographic card ships with every set and every A3 framed — flag it on the
+    // order line so fulfillment can't miss it (the "A4 Framed Set" label alone wouldn't say so).
+    let meta = {};
+    try { meta = JSON.parse(variant.pmeta || "{}"); } catch { /* ignore */ }
+    const isSet = !!(meta.frames && String(meta.frames).trim());
+    const holo = isSet || /a3/i.test(variant.label || "");
+    const label = holo ? `${variant.label} + Free holographic card` : variant.label;
+
     snapshot.push({
       variant_id: variant.id, product_id: variant.product_id,
-      name: variant.pname, label: variant.label, type: variant.ptype,
+      name: variant.pname, label, type: variant.ptype, holo,
       price_paise: variant.price_paise, qty,
     });
   }

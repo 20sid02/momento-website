@@ -26,14 +26,11 @@
     return String(f).split(",").map(function (s) { return s.trim(); }).filter(Boolean);
   }
   function isSet(p) { return frameSlugs(p).length > 0; }
-  // Savings for a set = Σ its frames' "from" price − the set's "from" price.
+  // Savings % for a set's shown "from" variant vs. its frames bought individually at the matching tier.
   function setSavings(p, bySlug) {
-    var sum = frameSlugs(p).reduce(function (acc, slug) {
-      var fr = bySlug[slug];
-      return acc + (fr ? fr.price_from : 0);
-    }, 0);
-    var save = sum - p.price_from;
-    return save > 0 ? save : 0;
+    var frames = frameSlugs(p).map(function (s) { return bySlug[s]; }).filter(Boolean);
+    var fv = Store.fromVariant(p);
+    return fv ? Store.setSavePct(fv.label, fv.price_paise, frames) : 0;
   }
 
   function soldOut(p) {
@@ -67,12 +64,12 @@
 
   // Special card for a complete set (the discounted linked-frame bundle).
   function setCard(p, bySlug) {
-    var save = setSavings(p, bySlug);
+    var savePct = setSavings(p, bySlug);
     var n = frameSlugs(p).length;
     return el("a", { class: "pcard pcard-set", href: "product.html?slug=" + encodeURIComponent(p.slug) },
       el("div", { class: "pcard-media momento" },
         el("span", { class: "pcard-type" }, "Complete Set"),
-        save ? el("span", { class: "save-ribbon" }, "Save " + Store.money(save)) : null,
+        savePct ? el("span", { class: "save-ribbon" }, "Save " + savePct + "%") : null,
         p.image ? el("img", { src: p.image, alt: p.name, loading: "lazy" }) : null
       ),
       el("div", { class: "pcard-body" },

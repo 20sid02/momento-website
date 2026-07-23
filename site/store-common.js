@@ -45,6 +45,36 @@ window.Store = (function () {
       return d;
     },
 
+    // ── set-vs-frames savings ─────────────────────────────────────
+    // Size tier from a variant label, e.g. "A3 Framed Set" → "A3". Null if none.
+    tierOf: function (label) { var m = /\ba([0-9])\b/i.exec(label || ""); return m ? "A" + m[1] : null; },
+    isFramed: function (label) { return /fram/i.test(label || ""); },
+    fromVariant: function (p) {
+      var vs = p && p.variants || [];
+      return vs.length ? vs.reduce(function (a, b) { return b.price_paise < a.price_paise ? b : a; }) : null;
+    },
+    // The individual-frame variant that matches a set variant's tier AND framing
+    // (so a "Framed Set" compares against framed frames, never the cheaper unframed print).
+    frameVariantFor: function (frame, setLabel) {
+      var tier = S.tierOf(setLabel), wantFramed = S.isFramed(setLabel);
+      var byTier = (frame.variants || []).filter(function (v) { return S.tierOf(v.label) === tier; });
+      if (!byTier.length) return null;
+      var pref = byTier.filter(function (v) { return S.isFramed(v.label) === wantFramed; });
+      var pool = pref.length ? pref : byTier;
+      return pool.reduce(function (a, b) { return b.price_paise < a.price_paise ? b : a; });
+    },
+    // Whole-percent saving of a set variant vs. buying its frames at the matching tier.
+    // 0 if the tiers don't line up or the set isn't actually cheaper.
+    setSavePct: function (setLabel, setPricePaise, frames) {
+      var sum = 0, ok = frames && frames.length > 0;
+      (frames || []).forEach(function (f) {
+        var fv = S.frameVariantFor(f, setLabel);
+        if (fv) sum += fv.price_paise; else ok = false;
+      });
+      if (!ok || !(sum > 0) || !(setPricePaise < sum)) return 0;
+      return Math.round((1 - setPricePaise / sum) * 100);
+    },
+
     // Tiny hyperscript helper
     el: function (tag, attrs) {
       var e = document.createElement(tag);

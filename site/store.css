@@ -217,6 +217,14 @@
   letter-spacing: 0.05em; font-size: 0.66rem; padding: 0.32rem 0.6rem; border-radius: 999px;
 }
 
+/* set product page: "Save ₹X" badge beside the price */
+.pdp-price-row { display: flex; align-items: center; gap: 0.7rem; flex-wrap: wrap; }
+.pdp-save-badge {
+  background: var(--gold); color: #241a05;
+  font-family: var(--font-cond); font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; font-size: 0.72rem; padding: 0.3rem 0.65rem; border-radius: 999px;
+}
+
 /* free holographic card with every A3 */
 .holo-note {
   display: flex; align-items: center; gap: 0.55rem;
